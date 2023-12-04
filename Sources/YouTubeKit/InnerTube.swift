@@ -28,10 +28,10 @@ public class InnerTube {
         }
     }
     
-    private struct Context: Encodable {
+    public struct Context: Encodable {
         let client: ContextClient
         
-        struct ContextClient: Encodable {
+        public struct ContextClient: Encodable {
             let clientName: String
             let clientVersion: String
             let clientScreen: String?
@@ -144,7 +144,7 @@ public class InnerTube {
         let streamingData: StreamingData?
         let videoDetails: VideoDetails?
 
-        struct PlayabilityStatus: Decodable {
+        public struct PlayabilityStatus: Decodable {
             let status: String?
             let reason: String?
         }
@@ -154,10 +154,10 @@ public class InnerTube {
             let shortDescription: String
             let thumbnail: Thumbnail
 
-            struct Thumbnail: Decodable {
+            public struct Thumbnail: Decodable {
                 let thumbnails: [ThumbnailMetadata]
 
-                struct ThumbnailMetadata: Decodable {
+                public struct ThumbnailMetadata: Decodable {
                     let url: URL
                     let width: Int
                     let height: Int
@@ -195,7 +195,7 @@ public class InnerTube {
         }
     }
     
-    private struct PlayerRequest: Encodable {
+    public struct PlayerRequest: Encodable {
         let context: Context
         let videoId: String
         let params: String = "8AEB"
