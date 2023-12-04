@@ -9,7 +9,7 @@ import Foundation
 import os.log
 
 @available(iOS 13.0, watchOS 6.0, tvOS 13.0, macOS 10.15, *)
-class Extraction {
+public class Extraction {
     
     private static let log = OSLog(Extraction.self)
     
@@ -313,7 +313,7 @@ class Extraction {
     /// Breaks up the data in the ``type`` key of the manifest, which contains the
     /// mime type and codecs serialized together, and splits them into separate elements.
     /// _Example_: mimeTypeCodec(#"audio/webm; codecs="opus""#) -> ("audio/webm", ["opus"])
-    class func mimeTypeCodec(_ mimeTypeCodec: String) throws -> (String, [String]) {
+    public class func mimeTypeCodec(_ mimeTypeCodec: String) throws -> (String, [String]) {
         let regex = NSRegularExpression(#"(\w+\/\w+)\;\scodecs=\"([a-zA-Z-0-9.,\s]*)\""#)
         if let mimeTypeResult = regex.firstMatch(in: mimeTypeCodec, group: 1),
            let codecsResult = regex.firstMatch(in: mimeTypeCodec, group: 2) {
