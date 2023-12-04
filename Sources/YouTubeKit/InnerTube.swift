@@ -67,7 +67,7 @@ public class InnerTube {
     
     private let baseURL = "https://www.youtube.com/youtubei/v1"
     
-    init(client: ClientType = .android, useOAuth: Bool = false, allowCache: Bool = true) {
+    init(client: ClientType = .web, useOAuth: Bool = false, allowCache: Bool = true) {
         self.context = defaultClients[client]!.context
         self.apiKey = defaultClients[client]!.apiKey
         self.headers = defaultClients[client]!.headers
