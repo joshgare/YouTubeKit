@@ -211,7 +211,7 @@ public class YouTube {
     }
 
     /// streaming data from video info
-    var streamingData: InnerTube.StreamingData {
+    public var streamingData: InnerTube.StreamingData {
         get async throws {
             if let streamingData = try await videoInfo.streamingData {
                 return streamingData
@@ -227,7 +227,7 @@ public class YouTube {
     }
 
     /// Video details from video info.
-    var videoDetails: InnerTube.VideoInfo.VideoDetails {
+    public var videoDetails: InnerTube.VideoInfo.VideoDetails {
         get async throws {
             if let videoDetails = try await videoInfo.videoDetails {
                 return videoDetails
@@ -237,7 +237,7 @@ public class YouTube {
         }
     }
     
-    var videoInfo: InnerTube.VideoInfo {
+    public var videoInfo: InnerTube.VideoInfo {
         get async throws {
             if let cached = _videoInfo {
                 return cached
