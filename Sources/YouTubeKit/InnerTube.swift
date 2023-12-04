@@ -173,7 +173,7 @@ public class InnerTube {
         let onesieStreamingUrl: String?
         let hlsManifestUrl: String?
         
-        struct Format: Decodable {
+        public struct Format: Decodable {
             let itag: Int
             var url: String?
             let mimeType: String
