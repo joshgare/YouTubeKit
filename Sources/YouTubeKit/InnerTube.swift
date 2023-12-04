@@ -167,41 +167,41 @@ public class InnerTube {
     }
     
     public struct StreamingData: Decodable {
-        let expiresInSeconds: String?
-        let formats: [Format]?
-        let adaptiveFormats: [Format]? // actually slightly different Format object (TODO)
-        let onesieStreamingUrl: String?
-        let hlsManifestUrl: String?
+        public let expiresInSeconds: String?
+        public let formats: [Format]?
+        public let adaptiveFormats: [Format]? // actually slightly different Format object (TODO)
+        public let onesieStreamingUrl: String?
+        public let hlsManifestUrl: String?
         
         public struct Format: Decodable {
-            let itag: Int
-            var url: String?
-            let mimeType: String
-            let bitrate: Int?
-            let width: Int?
-            let height: Int?
-            let lastModified: String?
-            let contentLength: String?
-            let quality: String
-            let fps: Int?
-            let qualityLabel: String?
-            let averageBitrate: Int?
-            let audioQuality: String?
-            let approxDurationMs: String?
-            let audioSampleRate: String?
-            let audioChannels: Int?
-            let signatureCipher: String? // not tested yet
-            var s: String? // assigned from Extraction.applyDescrambler
+            public let itag: Int
+            public var url: String?
+            public let mimeType: String
+            public let bitrate: Int?
+            public let width: Int?
+            public let height: Int?
+            public let lastModified: String?
+            public let contentLength: String?
+            public let quality: String
+            public let fps: Int?
+            public let qualityLabel: String?
+            public let averageBitrate: Int?
+            public let audioQuality: String?
+            public let approxDurationMs: String?
+            public let audioSampleRate: String?
+            public let audioChannels: Int?
+            public let signatureCipher: String? // not tested yet
+            public var s: String? // assigned from Extraction.applyDescrambler
         }
     }
     
     public struct PlayerRequest: Encodable {
-        let context: Context
-        let videoId: String
-        let params: String = "8AEB"
+        public let context: Context
+        public let videoId: String
+        public let params: String = "8AEB"
         //let paybackContext
-        let contentCheckOk: Bool = true
-        let racyCheckOk: Bool = true
+        public let contentCheckOk: Bool = true
+        public let racyCheckOk: Bool = true
     }
     
     private func playerRequest(forVideoID videoID: String) -> PlayerRequest {
