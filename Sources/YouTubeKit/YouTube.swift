@@ -55,9 +55,11 @@ public class YouTube {
     
     let useOAuth: Bool
     let allowOAuthCache: Bool
+    let client: InnerTube.ClientType
     
-    public init(videoID: String, proxies: [String: URL] = [:], useOAuth: Bool = false, allowOAuthCache: Bool = false) {
+    public init(videoID: String, client: InnerTube.ClientType = .ios, proxies: [String: URL] = [:], useOAuth: Bool = false, allowOAuthCache: Bool = false) {
         self.videoID = videoID
+        self.client = client
         self.useOAuth = useOAuth
         self.allowOAuthCache = allowOAuthCache
         // TODO: install proxies if needed
@@ -243,7 +245,7 @@ public class YouTube {
                 return cached
             }
             
-            let innertube = InnerTube(useOAuth: useOAuth, allowCache: allowOAuthCache)
+            let innertube = InnerTube(client: client, useOAuth: useOAuth, allowCache: allowOAuthCache)
             
             let innertubeResponse = try await innertube.player(videoID: videoID)
             _videoInfo = innertubeResponse

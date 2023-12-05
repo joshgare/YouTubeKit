@@ -51,7 +51,7 @@ public class InnerTube {
         ClientType.iosMusic: Client(name: "IOS_MUSIC", version: "5.21", screen: nil, apiKey: "AIzaSyBAETezhkwP0ZWA02RsqT1zu78Fpt0bC_s", userAgent: "com.google.ios.youtubemusic/5.21 (iPhone14,3; U; CPU iOS 15_6 like Mac OS X)")
     ]
     
-    enum ClientType {
+    public enum ClientType {
         case web, android, androidMusic, webEmbed, androidEmbed, tvEmbed, ios, iosMusic
     }
     
@@ -67,7 +67,7 @@ public class InnerTube {
     
     private let baseURL = "https://www.youtube.com/youtubei/v1"
     
-    init(client: ClientType = .android, useOAuth: Bool = false, allowCache: Bool = true) {
+    init(client: ClientType, useOAuth: Bool = false, allowCache: Bool = true) {
         self.context = defaultClients[client]!.context
         self.apiKey = defaultClients[client]!.apiKey
         self.headers = defaultClients[client]!.headers
