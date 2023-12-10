@@ -65,9 +65,9 @@ public class YouTube {
         // TODO: install proxies if needed
     }
     
-    public convenience init(url: URL, proxies: [String: URL] = [:], useOAuth: Bool = false, allowOAuthCache: Bool = false) {
+    public convenience init(url: URL, client: InnerTube.ClientType = .ios, proxies: [String: URL] = [:], useOAuth: Bool = false, allowOAuthCache: Bool = false) {
         let videoID = Extraction.extractVideoID(from: url.absoluteString) ?? ""
-        self.init(videoID: videoID, proxies: proxies, useOAuth: useOAuth, allowOAuthCache: allowOAuthCache)
+        self.init(videoID: videoID, client: client, proxies: proxies, useOAuth: useOAuth, allowOAuthCache: allowOAuthCache)
     }
     
     
